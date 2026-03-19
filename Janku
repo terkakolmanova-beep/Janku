@@ -1,0 +1,58 @@
+# Projektový brief: Sjednocený rezervační a prezentační web pro nemovitosti rodiny Janků
+
+## 1. Hlavní cíl projektu
+Vytvořit jednotné, moderní webové prostředí pro prezentaci a rezervaci kancelářských, skladových a obytných prostorů ve vlastnictví rodiny Janků. Web má za cíl plně nahradit nutnost inzerce na portálech třetích stran (např. Sreality). 
+
+Platforma musí fungovat jako důvěryhodná vizitka rodinného portfolia, která kombinuje profesionální nabídku s osobním přístupem a příběhem majitelů.
+
+## 2. Nemovitosti v portfoliu (Předmět nabídky)
+Projekt bude zastřešovat dvě hlavní lokality:
+1. **Areál JANKU CZ Chrastava** * **Typ:** Rodinný areál (sklady a kanceláře)
+   * **Lokace:** [Google Maps](https://maps.app.goo.gl/rhdey1wjd1AfDrcw7)
+   * **Původní inzerce:** [Sreality - Kanceláře Chrastava](https://www.sreality.cz/detail/pronajem/komercni/kancelare/chrastava-horni-chrastava-druzstevni/2446120012)
+2. **Nájemní dům JANKU CZ Liberec**
+   * **Typ:** Nájemní kancelářsko-obytný dům (pokoje/byty a menší kanceláře)
+   * **Lokace:** [Google Maps](https://maps.app.goo.gl/Yeaxvcf3eJEyHH61A)
+   * **Původní inzerce:** [Sreality - Pokoj Liberec](https://www.sreality.cz/detail/pronajem/byt/pokoj/liberec-liberec-iii-jerab-orli/1643709260)
+
+## 3. Inspirace a referenční weby
+* **A-C Vinice:** [https://www.acvinice.cz/](https://www.acvinice.cz/) (Vzor pro strukturu a profesionální prezentaci komerčních prostor)
+* **Frome Inc.:** [https://www.fromeinc.com/los-angeles-properties-page](https://www.fromeinc.com/los-angeles-properties-page) (Vzor pro portfolio více nemovitostí)
+* **Původní ChatGPT prompt k ideaci:** [Odkaz na kontext](https://chatgpt.com/share/e/69bc1d09-f178-8007-a3e6-48f6a21e7e67)
+
+## 4. Koncept: 3 obsahové vrstvy
+Web musí harmonicky propojit tři základní vrstvy:
+1. 🏢 **Nabídka (Hard facts):** Konkrétní volné kapacity (sklady, kanceláře, pokoje), metráž, ceny, půdorysy.
+2. 🌳 **Prezentace areálu a budov:** Fotografie okolí, interaktivní či statická mapa, klíčové vybavení a benefity lokality.
+3. 👨‍👩‍👧 **Příběh vlastníka:** Kdo je rodina Janků, jejich historie, stabilita, hodnoty a osobní přístup k nájemcům.
+
+## 5. Požadovaná struktura webu (Layout)
+Navrhni architekturu webu a UI komponenty podle této doporučené struktury:
+
+1. **Hero sekce**
+   * Poutavá fotografie/video areálu nebo budovy.
+   * **Claim:** _„Pronájem skladů a kanceláří v Libereckém kraji“_ (nebo dynamicky podle výběru).
+   * Call-to-Action (CTA) tlačítko pro rychlý přechod na volné prostory.
+2. **Areály a budovy jako celek**
+   * Sekce představující Chrastavu a Liberec.
+   * Mapa dostupnosti.
+   * Výhody (např. blízkost dálnice, parkování přímo v areálu, dostupnost MHD).
+3. **Katalog prostorů (Nabídka)**
+   * Filtrování: podle typu (kancelář / sklad / bydlení), podle m², podle lokality.
+   * Detailní karta každé jednotky (galerie, plánek, specifikace, rezervační/kontaktní formulář).
+4. **O nás (Rodina Janků)**
+   * Rodinný příběh, osobní fotografie.
+   * Proč to dělají a jaký mají vztah ke svým nájemcům (budování komunity, stabilita).
+5. **Reference / Nájemci**
+   * Loga nebo citace aktuálních dlouhodobých nájemců (zvyšuje důvěryhodnost).
+   * Kontakt (Patička s jasnými údaji, IČO, telefon, e-mail).
+
+## 6. Tone of Voice (Komunikační tón)
+* **NE:** Strohý inzertní styl _"Pronajímáme sklad 50m2..."_
+* **ANO:** Přátelský, profesionální a partnerský přístup. _„Pomáháme firmám růst díky flexibilním prostorům.“_ nebo _„Pohodlné bydlení a podnikání s rodinnou péčí.“_
+
+## 7. Instrukce pro Claude Code
+* **Založení projektu:** Navrhni strukturu moderní webové aplikace (např. v React/Next.js s Tailwind CSS pro rychlý a responzivní design).
+* **Komponenty:** Vytvoř znovupoužitelné komponenty pro `PropertyCard` (Karta nemovitosti), `FilterBar` (Lišta s filtry) a `HeroSection`.
+* **Data struktura:** Navrhni mockový JSON soubor pro správu nabízených prostor (aby rodina mohla snadno přidávat/odebírat jednotky bez složitého CMS v první fázi, nebo rovnou navrhni napojení na jednoduché headless CMS).
+* **UI/UX:** Zaměř se na velmi čistý a přehledný design s důrazem na důvěryhodnost (hodně bílého místa, profesionální typografie, velký prostor pro fotografie).

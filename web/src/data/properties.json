@@ -1,0 +1,137 @@
+{
+  "locations": [
+    {
+      "id": "chrastava",
+      "name": "Areál JANKU CZ Chrastava",
+      "description": "Rodinný areál se sklady a kancelářemi v klidné průmyslové zóně Chrastavy. Skvělá dostupnost z Liberce i dálnice.",
+      "address": "Družstevní, Horní Chrastava",
+      "mapUrl": "https://maps.app.goo.gl/rhdey1wjd1AfDrcw7",
+      "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2534.5!2d14.97!3d50.82!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDQ5JzEyLjAiTiAxNMKwNTgnMTIuMCJF!5e0!3m2!1scs!2scz!4v1",
+      "benefits": [
+        "Přímá blízkost silnice I/13",
+        "Parkování přímo v areálu",
+        "24/7 přístup do areálu",
+        "Klidné prostředí mimo centrum"
+      ],
+      "image": "/chrastava-hero.jpg"
+    },
+    {
+      "id": "liberec",
+      "name": "Nájemní dům JANKU CZ Liberec",
+      "description": "Nájemní kancelářsko-obytný dům v centru Liberce. Ideální pro malé firmy i jednotlivce hledající komfortní bydlení.",
+      "address": "Orlí, Liberec III – Jeřáb",
+      "mapUrl": "https://maps.app.goo.gl/Yeaxvcf3eJEyHH61A",
+      "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2534.5!2d15.06!3d50.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDQ2JzEyLjAiTiAxNcKwMDMnMzYuMCJF!5e0!3m2!1scs!2scz!4v1",
+      "benefits": [
+        "Centrum Liberce – dostupnost MHD",
+        "Blízkost obchodů a služeb",
+        "Klidná rezidenční ulice",
+        "Možnost bydlení i kanceláří"
+      ],
+      "image": "/liberec-hero.jpg"
+    }
+  ],
+  "properties": [
+    {
+      "id": "ch-sklad-01",
+      "locationId": "chrastava",
+      "type": "sklad",
+      "name": "Sklad A1",
+      "area": 120,
+      "price": 8500,
+      "available": true,
+      "description": "Prostorný sklad s přímým přístupem pro nákladní vozidla. Betonová podlaha, elektrická vrata.",
+      "features": ["Nákladní rampa", "Elektrická vrata", "Vytápění", "Zabezpečení"],
+      "image": "/placeholder-sklad.jpg"
+    },
+    {
+      "id": "ch-sklad-02",
+      "locationId": "chrastava",
+      "type": "sklad",
+      "name": "Sklad A2",
+      "area": 85,
+      "price": 6200,
+      "available": true,
+      "description": "Menší skladový prostor vhodný pro menší firmy a živnostníky. Suchý, temperovaný.",
+      "features": ["Elektrická vrata", "Temperování", "Zabezpečení"],
+      "image": "/placeholder-sklad.jpg"
+    },
+    {
+      "id": "ch-kancelar-01",
+      "locationId": "chrastava",
+      "type": "kancelar",
+      "name": "Kancelář B1",
+      "area": 35,
+      "price": 5500,
+      "available": true,
+      "description": "Světlá kancelář s velkými okny a výhledem do zeleně. Vhodná pro 2–4 pracovní místa.",
+      "features": ["Klimatizace", "Optický internet", "Sdílená kuchyňka", "Parkování"],
+      "image": "/placeholder-kancelar.jpg"
+    },
+    {
+      "id": "ch-kancelar-02",
+      "locationId": "chrastava",
+      "type": "kancelar",
+      "name": "Kancelář B2",
+      "area": 22,
+      "price": 3800,
+      "available": false,
+      "description": "Kompaktní kancelář ideální pro freelancery nebo malé týmy. Plně vybavená.",
+      "features": ["Optický internet", "Sdílená kuchyňka", "Parkování"],
+      "image": "/placeholder-kancelar.jpg"
+    },
+    {
+      "id": "lb-kancelar-01",
+      "locationId": "liberec",
+      "type": "kancelar",
+      "name": "Kancelář 1.NP",
+      "area": 28,
+      "price": 6500,
+      "available": true,
+      "description": "Reprezentativní kancelář v přízemí domu s vlastním vstupem. Ideální pro poradenství nebo služby.",
+      "features": ["Vlastní vstup", "Optický internet", "WC na patře", "Klimatizace"],
+      "image": "/placeholder-kancelar.jpg"
+    },
+    {
+      "id": "lb-pokoj-01",
+      "locationId": "liberec",
+      "type": "bydleni",
+      "name": "Pokoj 2.NP – A",
+      "area": 18,
+      "price": 7500,
+      "available": true,
+      "description": "Zařízený pokoj s vlastním sociálním zařízením. Vhodný pro studenty i pracující.",
+      "features": ["Zařízený", "Vlastní koupelna", "Sdílená kuchyň", "Wi-Fi"],
+      "image": "/placeholder-bydleni.jpg"
+    },
+    {
+      "id": "lb-pokoj-02",
+      "locationId": "liberec",
+      "type": "bydleni",
+      "name": "Pokoj 2.NP – B",
+      "area": 22,
+      "price": 8500,
+      "available": true,
+      "description": "Větší zařízený pokoj s kuchyňským koutem a vlastní koupelnou. Plně samostatná jednotka.",
+      "features": ["Zařízený", "Kuchyňský kout", "Vlastní koupelna", "Wi-Fi"],
+      "image": "/placeholder-bydleni.jpg"
+    },
+    {
+      "id": "lb-byt-01",
+      "locationId": "liberec",
+      "type": "bydleni",
+      "name": "Byt 3.NP",
+      "area": 45,
+      "price": 12500,
+      "available": false,
+      "description": "Prostorný byt 1+kk ve 3. patře s výhledem na město. Plně vybavený, ihned k nastěhování.",
+      "features": ["Plně vybavený", "Výhled na město", "Vlastní kuchyň", "Balkon"],
+      "image": "/placeholder-bydleni.jpg"
+    }
+  ],
+  "tenants": [
+    { "name": "LogiTrans s.r.o.", "quote": "V areálu Chrastava máme sklad už 5 let. Spolupráce s rodinou Janků je bezproblémová." },
+    { "name": "Studio Kreativ", "quote": "Kancelář v Liberci nám poskytuje skvělé zázemí pro naši kreativní práci." },
+    { "name": "Ing. Petr Novák", "quote": "Pohodlné bydlení s osobním přístupem. Doporučuji každému." }
+  ]
+}

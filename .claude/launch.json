@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "janku-web",
+      "runtimeExecutable": "/Users/terezakolmanova/.nvm/versions/node/v20.20.1/bin/node",
+      "runtimeArgs": ["/Users/terezakolmanova/Janku/web/node_modules/.bin/next", "dev"],
+      "port": 3000,
+      "cwd": "/Users/terezakolmanova/Janku/web"
+    }
+  ]
+}
