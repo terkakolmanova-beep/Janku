@@ -10,7 +10,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="kontakt" className="py-20 px-4 bg-primary">
+    <section id="kontakt" className="py-20 px-4 bg-primary border-t border-white/10">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Info */}
@@ -30,12 +30,26 @@ export default function ContactSection() {
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="font-medium">Zástupce</div>
+                  <div className="text-blue-200">Ing. Jiří Janků – jednatel</div>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div>
                   <div className="font-medium">Telefon</div>
-                  <div className="text-blue-200">+420 XXX XXX XXX</div>
+                  <a href="tel:+420485107710" className="text-blue-200 hover:text-white transition-colors">
+                    +420 485 107 710
+                  </a>
                 </div>
               </div>
 
@@ -47,7 +61,9 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <div className="font-medium">E-mail</div>
-                  <div className="text-blue-200">info@janku.cz</div>
+                  <a href="mailto:objednavky@jipa.cz" className="text-blue-200 hover:text-white transition-colors">
+                    objednavky@jipa.cz
+                  </a>
                 </div>
               </div>
 
@@ -58,8 +74,8 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <div className="font-medium">IČO</div>
-                  <div className="text-blue-200">XX XXX XXX</div>
+                  <div className="font-medium">JANKU CZ s.r.o.</div>
+                  <div className="text-blue-200">IČ: 27275124</div>
                 </div>
               </div>
             </div>
@@ -119,8 +135,9 @@ export default function ContactSection() {
                   </label>
                   <select className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-gray-600">
                     <option value="">Vyberte typ</option>
+                    <option value="hala">Hala</option>
                     <option value="kancelar">Kancelář</option>
-                    <option value="sklad">Sklad</option>
+                    <option value="prodejna">Prodejna</option>
                     <option value="bydleni">Bydlení</option>
                     <option value="jine">Jiné / nevím</option>
                   </select>

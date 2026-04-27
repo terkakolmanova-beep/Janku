@@ -34,12 +34,17 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#nabidka" className="hover:text-white transition-colors">
+                  Haly
+                </a>
+              </li>
+              <li>
+                <a href="#nabidka" className="hover:text-white transition-colors">
                   Kanceláře
                 </a>
               </li>
               <li>
                 <a href="#nabidka" className="hover:text-white transition-colors">
-                  Sklady
+                  Prodejny
                 </a>
               </li>
               <li>
@@ -53,9 +58,18 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4 text-sm">Kontakt</h4>
             <ul className="space-y-2 text-sm">
-              <li>+420 XXX XXX XXX</li>
-              <li>info@janku.cz</li>
-              <li>IČO: XX XXX XXX</li>
+              <li className="text-white font-medium">JANKU CZ s.r.o.</li>
+              <li>
+                <a href="tel:+420485107710" className="hover:text-white transition-colors">
+                  +420 485 107 710
+                </a>
+              </li>
+              <li>
+                <a href="mailto:objednavky@jipa.cz" className="hover:text-white transition-colors">
+                  objednavky@jipa.cz
+                </a>
+              </li>
+              <li>IČ: 27275124</li>
             </ul>
           </div>
         </div>

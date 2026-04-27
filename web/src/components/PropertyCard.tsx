@@ -1,3 +1,6 @@
+"use client";
+import { useState } from "react";
+
 interface Property {
   id: string;
   locationId: string;
@@ -5,21 +8,24 @@ interface Property {
   name: string;
   area: number;
   price: number;
+  priceNote?: string;
   available: boolean;
   description: string;
   features: string[];
-  image: string;
+  images: string[];
 }
 
 const typeLabels: Record<string, string> = {
   kancelar: "Kancelář",
-  sklad: "Sklad",
+  hala: "Hala",
+  prodejna: "Prodejna",
   bydleni: "Bydlení",
 };
 
 const typeColors: Record<string, string> = {
   kancelar: "bg-blue-100 text-blue-700",
-  sklad: "bg-amber-100 text-amber-700",
+  hala: "bg-amber-100 text-amber-700",
+  prodejna: "bg-purple-100 text-purple-700",
   bydleni: "bg-green-100 text-green-700",
 };
 
@@ -29,20 +35,75 @@ const locationLabels: Record<string, string> = {
 };
 
 export default function PropertyCard({ property }: { property: Property }) {
+  const [imgIdx, setImgIdx] = useState(0);
+  const images = property.images ?? [];
+  const hasImages = images.length > 0;
+
+  function prev(e: React.MouseEvent) {
+    e.preventDefault();
+    setImgIdx((i) => (i - 1 + images.length) % images.length);
+  }
+  function next(e: React.MouseEvent) {
+    e.preventDefault();
+    setImgIdx((i) => (i + 1) % images.length);
+  }
+
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-gray-100 group">
-      {/* Image placeholder */}
+      {/* Image area */}
       <div className="relative h-52 bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-          <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-        </div>
+        {hasImages ? (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={images[imgIdx]}
+              alt={`${property.name} – foto ${imgIdx + 1}`}
+              className="w-full h-full object-cover"
+            />
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={prev}
+                  aria-label="Předchozí foto"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg leading-none opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  ‹
+                </button>
+                <button
+                  onClick={next}
+                  aria-label="Další foto"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg leading-none opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  ›
+                </button>
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                  {images.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={(e) => { e.preventDefault(); setImgIdx(i); }}
+                      aria-label={`Foto ${i + 1}`}
+                      className={`w-1.5 h-1.5 rounded-full transition-colors ${i === imgIdx ? "bg-white" : "bg-white/50"}`}
+                    />
+                  ))}
+                </div>
+                <span className="absolute bottom-2 right-3 text-white/80 text-xs">
+                  {imgIdx + 1} / {images.length}
+                </span>
+              </>
+            )}
+          </>
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+            <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+        )}
 
         {/* Badges */}
         <div className="absolute top-3 left-3 flex gap-2">
-          <span className={`px-3 py-1 rounded-full text-xs font-semibold ${typeColors[property.type] || "bg-gray-100 text-gray-700"}`}>
-            {typeLabels[property.type] || property.type}
+          <span className={`px-3 py-1 rounded-full text-xs font-semibold ${typeColors[property.type] ?? "bg-gray-100 text-gray-700"}`}>
+            {typeLabels[property.type] ?? property.type}
           </span>
           <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-gray-700">
             {locationLabels[property.locationId]}
@@ -69,12 +130,14 @@ export default function PropertyCard({ property }: { property: Property }) {
 
         {/* Stats */}
         <div className="flex items-center gap-4 mb-4 text-sm text-text-muted">
-          <span className="flex items-center gap-1">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-            </svg>
-            {property.area} m²
-          </span>
+          {property.area > 0 && (
+            <span className="flex items-center gap-1">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              </svg>
+              {property.area} m²
+            </span>
+          )}
           <span className="flex items-center gap-1">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -85,34 +148,44 @@ export default function PropertyCard({ property }: { property: Property }) {
         </div>
 
         {/* Features */}
-        <div className="flex flex-wrap gap-2 mb-5">
-          {property.features.slice(0, 3).map((f) => (
-            <span
-              key={f}
-              className="text-xs bg-gray-50 text-gray-600 px-2.5 py-1 rounded-md"
-            >
-              {f}
-            </span>
-          ))}
-          {property.features.length > 3 && (
-            <span className="text-xs text-text-muted px-2.5 py-1">
-              +{property.features.length - 3}
-            </span>
-          )}
-        </div>
+        {property.features.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-5">
+            {property.features.slice(0, 3).map((f) => (
+              <span key={f} className="text-xs bg-gray-50 text-gray-600 px-2.5 py-1 rounded-md">
+                {f}
+              </span>
+            ))}
+            {property.features.length > 3 && (
+              <span className="text-xs text-text-muted px-2.5 py-1">
+                +{property.features.length - 3}
+              </span>
+            )}
+          </div>
+        )}
 
         {/* Price + CTA */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           <div>
-            <span className="text-2xl font-bold text-primary">
-              {property.price.toLocaleString("cs-CZ")} Kč
-            </span>
-            <span className="text-sm text-text-muted"> / měsíc</span>
+            {property.price > 0 ? (
+              <>
+                <span className="text-2xl font-bold text-primary">
+                  {property.price.toLocaleString("cs-CZ")} Kč
+                </span>
+                <span className="text-sm text-text-muted"> / měsíc</span>
+                {property.priceNote && (
+                  <p className="text-xs text-text-muted mt-1 leading-snug max-w-[200px]">
+                    {property.priceNote}
+                  </p>
+                )}
+              </>
+            ) : (
+              <span className="text-xl font-bold text-primary">Cena na dotaz</span>
+            )}
           </div>
           {property.available && (
             <a
               href="#kontakt"
-              className="bg-primary hover:bg-primary-light text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+              className="bg-primary hover:bg-primary-light text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors shrink-0"
             >
               Mám zájem
             </a>

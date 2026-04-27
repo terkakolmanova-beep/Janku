@@ -14,7 +14,7 @@ export default function LocationSection({
   locations: Location[];
 }) {
   return (
-    <section id="arealy" className="py-20 px-4 bg-white">
+    <section id="arealy" className="py-20 px-4 bg-[#eef0ff]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
           <p className="text-accent font-medium text-sm tracking-widest uppercase mb-3">

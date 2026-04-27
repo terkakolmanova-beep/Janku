@@ -10,10 +10,11 @@ interface Property {
   name: string;
   area: number;
   price: number;
+  priceNote?: string;
   available: boolean;
   description: string;
   features: string[];
-  image: string;
+  images: string[];
 }
 
 export default function CatalogSection({
@@ -34,7 +35,7 @@ export default function CatalogSection({
   const rented = filtered.filter((p) => !p.available);
 
   return (
-    <section id="nabidka" className="py-20 px-4">
+    <section id="nabidka" className="py-20 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <p className="text-accent font-medium text-sm tracking-widest uppercase mb-3">
@@ -44,7 +45,7 @@ export default function CatalogSection({
             Najděte svůj ideální prostor
           </h2>
           <p className="text-text-muted mt-4 max-w-2xl mx-auto">
-            Vybírejte z kanceláří, skladů a bytových jednotek ve dvou lokalitách.
+            Vybírejte z hal, kanceláří, prodejen a bytových jednotek ve dvou lokalitách.
           </p>
         </div>
 

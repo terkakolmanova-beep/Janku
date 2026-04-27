@@ -1,16 +1,13 @@
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center bg-primary overflow-hidden">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-light to-primary opacity-90" />
-
-      {/* Decorative pattern */}
-      <div className="absolute inset-0 opacity-5">
+    <section className="relative min-h-[90vh] flex items-center justify-center bg-bg overflow-hidden">
+      {/* Subtle dot pattern */}
+      <div className="absolute inset-0 opacity-[0.035]">
         <div
           className="w-full h-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+              "radial-gradient(circle at 2px 2px, #27187e 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -20,11 +17,11 @@ export default function HeroSection() {
         <p className="text-accent font-medium text-sm tracking-widest uppercase mb-6">
           Rodinné pronájmy v Libereckém kraji
         </p>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
           Pomáháme firmám růst díky{" "}
-          <span className="text-accent">flexibilním prostorům</span>
+          <span className="highlighter">flexibilním prostorům</span>
         </h1>
-        <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
           Sklady, kanceláře a bydlení s osobním přístupem. Dva areály, jedna
           rodina, desítky spokojených nájemců.
         </p>
@@ -40,21 +37,11 @@ export default function HeroSection() {
           </a>
           <a
             href="#kontakt"
-            className="inline-flex items-center justify-center border-2 border-white/30 hover:border-white/60 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors"
+            className="inline-flex items-center justify-center border-2 border-primary/30 hover:border-primary text-primary font-semibold px-8 py-4 rounded-lg text-lg transition-colors"
           >
             Kontaktujte nás
           </a>
         </div>
-      </div>
-
-      {/* Bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M0 80h1440V30c-240 30-480 50-720 50S240 60 0 30v50z"
-            fill="var(--color-bg)"
-          />
-        </svg>
       </div>
     </section>
   );

@@ -9,8 +9,9 @@ interface FilterBarProps {
 
 const types = [
   { value: "all", label: "Vše" },
+  { value: "hala", label: "Haly" },
   { value: "kancelar", label: "Kanceláře" },
-  { value: "sklad", label: "Sklady" },
+  { value: "prodejna", label: "Prodejny" },
   { value: "bydleni", label: "Bydlení" },
 ];
 
