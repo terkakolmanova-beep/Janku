@@ -4,9 +4,9 @@
       "id": "chrastava",
       "name": "Areál JANKU CZ Chrastava",
       "description": "Rodinný areál se sklady a kancelářemi v klidné průmyslové zóně Chrastavy. Skvělá dostupnost z Liberce i dálnice.",
-      "address": "Družstevní, Horní Chrastava",
+      "address": "Družstevní 63, 463 31 Chrastava – Horní Chrastava",
       "mapUrl": "https://maps.app.goo.gl/rhdey1wjd1AfDrcw7",
-      "mapEmbed": "https://frame.mapy.cz/zakladni?x=14.9655&y=50.8175&z=16",
+      "mapEmbed": "https://frame.mapy.cz/zakladni?x=14.9726088&y=50.8205576&z=17&source=coor&id=14.9726088%2C50.8205576",
       "benefits": [
         "Přímá blízkost silnice I/13",
         "Parkování přímo v areálu",
@@ -19,9 +19,9 @@
       "id": "liberec",
       "name": "Nájemní dům JANKU CZ Liberec",
       "description": "Nájemní kancelářsko-obytný dům v centru Liberce. Ideální pro malé firmy i jednotlivce hledající komfortní bydlení.",
-      "address": "Orlí, Liberec III – Jeřáb",
+      "address": "Orlí 261/8, 460 01 Liberec III – Jeřáb",
       "mapUrl": "https://maps.app.goo.gl/Yeaxvcf3eJEyHH61A",
-      "mapEmbed": "https://frame.mapy.cz/zakladni?x=15.0528&y=50.7695&z=17",
+      "mapEmbed": "https://frame.mapy.cz/zakladni?x=15.0512778&y=50.7679410&z=17&source=coor&id=15.0512778%2C50.7679410",
       "benefits": [
         "Centrum Liberce – dostupnost MHD",
         "Blízkost obchodů a služeb",
