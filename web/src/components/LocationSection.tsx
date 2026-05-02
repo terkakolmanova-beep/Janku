@@ -4,6 +4,7 @@ interface Location {
   description: string;
   address: string;
   mapUrl: string;
+  mapEmbed: string;
   benefits: string[];
   image: string;
 }
@@ -35,19 +36,26 @@ export default function LocationSection({
               key={loc.id}
               className="rounded-2xl overflow-hidden border border-gray-100 bg-bg hover:shadow-lg transition-shadow"
             >
-              {/* Map placeholder */}
-              <div className="h-56 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center relative">
-                <svg className="w-12 h-12 text-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+              {/* Map embed */}
+              <div className="h-56 relative overflow-hidden">
+                <iframe
+                  src={loc.mapEmbed}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Mapa – ${loc.name}`}
+                  className="absolute inset-0 w-full h-full"
+                />
                 <a
                   href={loc.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-3 right-3 bg-white text-primary text-sm font-medium px-4 py-2 rounded-lg shadow hover:shadow-md transition-shadow"
+                  className="absolute bottom-3 right-3 bg-white text-primary text-sm font-medium px-4 py-2 rounded-lg shadow hover:shadow-md transition-shadow z-10"
                 >
-                  Otevřít mapu
+                  Otevřít mapu ↗
                 </a>
               </div>
 
