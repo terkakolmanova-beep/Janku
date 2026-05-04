@@ -60,11 +60,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li className="text-white font-medium">JANKU CZ s.r.o.</li>
               <li>
-                <a href="tel:+420485107710" className="hover:text-white transition-colors">
-                  +420 485 107 710
-                </a>
-              </li>
-              <li>
                 <a href="mailto:objednavky@jipa.cz" className="hover:text-white transition-colors">
                   objednavky@jipa.cz
                 </a>
