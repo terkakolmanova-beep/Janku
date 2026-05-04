@@ -39,6 +39,7 @@ export default function PropertyCard({ property }: { property: Property }) {
   const [imgIdx, setImgIdx] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [descExpanded, setDescExpanded] = useState(false);
   const images = property.images ?? [];
   const hasImages = images.length > 0;
 
@@ -243,9 +244,17 @@ export default function PropertyCard({ property }: { property: Property }) {
           <h3 className="text-lg font-semibold text-gray-900 mb-1">
             {property.name}
           </h3>
-          <p className="text-sm text-text-muted mb-4 line-clamp-2">
+          <p
+            className={`text-sm text-text-muted mb-1 ${descExpanded ? "" : "line-clamp-2"}`}
+          >
             {property.description}
           </p>
+          <button
+            onClick={() => setDescExpanded((v) => !v)}
+            className="text-xs text-primary/70 hover:text-primary mb-3 transition-colors"
+          >
+            {descExpanded ? "Zobrazit méně ↑" : "Zobrazit více ↓"}
+          </button>
 
           {/* Stats */}
           <div className="flex items-center gap-4 mb-4 text-sm text-text-muted">
@@ -269,16 +278,11 @@ export default function PropertyCard({ property }: { property: Property }) {
           {/* Features */}
           {property.features.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-5">
-              {property.features.slice(0, 3).map((f) => (
+              {property.features.map((f) => (
                 <span key={f} className="text-xs bg-gray-50 text-gray-600 px-2.5 py-1 rounded-md">
                   {f}
                 </span>
               ))}
-              {property.features.length > 3 && (
-                <span className="text-xs text-text-muted px-2.5 py-1">
-                  +{property.features.length - 3}
-                </span>
-              )}
             </div>
           )}
 
