@@ -3,10 +3,40 @@ import { useState, type FormEvent } from "react";
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const data = {
+      name:     (form.elements.namedItem("name")     as HTMLInputElement).value,
+      email:    (form.elements.namedItem("email")    as HTMLInputElement).value,
+      phone:    (form.elements.namedItem("phone")    as HTMLInputElement).value,
+      interest: (form.elements.namedItem("interest") as HTMLSelectElement).value,
+      message:  (form.elements.namedItem("message")  as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError("Odeslání se nezdařilo. Zkuste to prosím znovu nebo nás kontaktujte přímo na objednavky@jipa.cz.");
+      }
+    } catch {
+      setError("Odeslání se nezdařilo. Zkuste to prosím znovu nebo nás kontaktujte přímo na objednavky@jipa.cz.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -23,7 +53,7 @@ export default function ContactSection() {
             </h2>
             <p className="text-blue-100 leading-relaxed mb-10">
               Máte zájem o pronájem nebo se chcete na něco zeptat? Napište nám
-              nebo zavolejte — rádi vám poradíme a domluvíme prohlídku.
+              — rádi vám poradíme a domluvíme prohlídku.
             </p>
 
             <div className="space-y-6">
@@ -76,6 +106,7 @@ export default function ContactSection() {
                     Jméno
                   </label>
                   <input
+                    name="name"
                     type="text"
                     required
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
@@ -87,6 +118,7 @@ export default function ContactSection() {
                     E-mail
                   </label>
                   <input
+                    name="email"
                     type="email"
                     required
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
@@ -98,6 +130,7 @@ export default function ContactSection() {
                     Telefon
                   </label>
                   <input
+                    name="phone"
                     type="tel"
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
                     placeholder="+420"
@@ -107,7 +140,10 @@ export default function ContactSection() {
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     O jaký prostor máte zájem?
                   </label>
-                  <select className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-gray-600">
+                  <select
+                    name="interest"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-gray-600"
+                  >
                     <option value="">Vyberte typ</option>
                     <option value="hala">Hala</option>
                     <option value="kancelar">Kancelář</option>
@@ -121,16 +157,23 @@ export default function ContactSection() {
                     Zpráva
                   </label>
                   <textarea
+                    name="message"
                     rows={4}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none"
                     placeholder="Napište nám..."
                   />
                 </div>
+
+                {error && (
+                  <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-lg">{error}</p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 rounded-lg transition-colors"
+                  disabled={loading}
+                  className="w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 rounded-lg transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Odeslat zprávu
+                  {loading ? "Odesílám…" : "Odeslat zprávu"}
                 </button>
               </form>
             )}
