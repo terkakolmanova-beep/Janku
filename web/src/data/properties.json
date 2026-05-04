@@ -39,9 +39,14 @@
       "name": "Hala 1",
       "area": 617,
       "price": 0,
-      "available": false,
+      "available": true,
       "description": "Prostorná betonová hala o výměře 617,4 m² (36 × 14,7 m) v Chrastavě. Čtyři světlíky zajišťují dostatek denního osvětlení. Součástí je zázemí s kanceláří, šatnou a toaletou.",
-      "features": ["Kancelář", "Šatna", "Toaleta", "4 světlíky"],
+      "features": [
+        "Kancelář",
+        "Šatna",
+        "Toaleta",
+        "4 světlíky"
+      ],
       "images": [
         "/images/hala-1/1.jpg",
         "/images/hala-1/2.jpg",
@@ -57,9 +62,12 @@
       "name": "Hala 3",
       "area": 400,
       "price": 0,
-      "available": false,
+      "available": true,
       "description": "Prostorná hala o výměře 400 m² s betonovou konstrukcí a výškou přesahující 13 metrů. Vhodná pro skladování, logistiku či lehkou výrobu.",
-      "features": ["Výška 13+ m", "Buňka"],
+      "features": [
+        "Výška 13+ m",
+        "Buňka"
+      ],
       "images": [
         "/images/hala-3/1.jpg",
         "/images/hala-3/2.jpg",
@@ -73,9 +81,11 @@
       "name": "Hala 4",
       "area": 315,
       "price": 0,
-      "available": false,
+      "available": true,
       "description": "Hala o výměře 315 m² s betonovou konstrukcí v Chrastavě. Disponuje dvěma samostatnými místnostmi využitelnými jako zázemí či sklad.",
-      "features": ["2 místnosti"],
+      "features": [
+        "2 místnosti"
+      ],
       "images": [
         "/images/hala-4/1.jpg",
         "/images/hala-4/2.jpg",
@@ -93,7 +103,12 @@
       "priceNote": "+ 500 Kč/měsíc úklid společných prostor · energie dle spotřeby (odhad cca 3 000 Kč)",
       "available": true,
       "description": "Kancelář o velikosti 51 m² v 1. patře zrekonstruovaného objektu v Chrastavě. Připravená k okamžitému využití, vybavena nábytkem. Sdílená kuchyňka a toalety. Zateplená budova s plynovým kotlem. Možnost pronájmu dalších dvou kanceláří (17 m² a 32 m²).",
-      "features": ["Bez výtahu", "Zařízeno", "Parkovací stání", "Sdílená kuchyňka"],
+      "features": [
+        "Bez výtahu",
+        "Zařízeno",
+        "Parkovací stání",
+        "Sdílená kuchyňka"
+      ],
       "images": [
         "/images/kancelar-chrastava/1.jpg",
         "/images/kancelar-chrastava/2.jpg",
@@ -118,7 +133,12 @@
       "priceNote": "+ energie dle spotřeby (odhad cca 5 000 Kč) · dostupné od 1. 6. 2026",
       "available": true,
       "description": "Příjemné kancelářské prostory v cihlové budově v Liberci, ul. Orlí. Tři samostatné místnosti po cca 20 m² v 1. patře – možné pronajmout i jednotlivě. Prostory jsou nezařízené a k dispozici od 1. 6. 2026.",
-      "features": ["Cihlová", "Bez výtahu", "3 místnosti", "Prohlídky po domluvě"],
+      "features": [
+        "Cihlová",
+        "Bez výtahu",
+        "3 místnosti",
+        "Prohlídky po domluvě"
+      ],
       "images": [
         "/images/kancelar-orli/1.jpg",
         "/images/kancelar-orli/2.jpg",
@@ -133,9 +153,14 @@
       "name": "Prodejna přízemí",
       "area": 48,
       "price": 0,
-      "available": false,
+      "available": true,
       "description": "Komerční prostor o výměře 48 m² v přízemí domu v ulici Orlí, Liberec. Tři místnosti s výlohami a kuchyňkou. Flexibilní využití jako kancelář, obchodní prostor či provozovna služeb.",
-      "features": ["Výlohy", "Kuchyňka", "3 místnosti", "Přízemí"],
+      "features": [
+        "Výlohy",
+        "Kuchyňka",
+        "3 místnosti",
+        "Přízemí"
+      ],
       "images": [
         "/images/prodejna/0.png",
         "/images/prodejna/1.png",
@@ -159,7 +184,12 @@
       "priceNote": "cena za pokoj · energie v ceně nájmu · dostupné od 1. 6. 2026",
       "available": true,
       "description": "Jednotlivé pokoje k podnájmu v bytové jednotce o cca 60 m² ve 2. patře cihlové budovy v Liberci. Tři samostatné pokoje se společným zázemím (kuchyně, koupelna, WC). K nastěhování od 1. 6. 2026.",
-      "features": ["Cihlová", "Bez výtahu", "Společná kuchyně", "Společná koupelna a WC"],
+      "features": [
+        "Cihlová",
+        "Bez výtahu",
+        "Společná kuchyně",
+        "Společná koupelna a WC"
+      ],
       "images": [
         "/images/byt-a/1.png",
         "/images/byt-a/2.png",
@@ -172,8 +202,17 @@
     }
   ],
   "tenants": [
-    { "name": "LogiTrans s.r.o.", "quote": "V areálu Chrastava máme sklad už 5 let. Spolupráce s rodinou Janků je bezproblémová." },
-    { "name": "Studio Kreativ", "quote": "Kancelář v Liberci nám poskytuje skvělé zázemí pro naši kreativní práci." },
-    { "name": "Ing. Petr Novák", "quote": "Pohodlné bydlení s osobním přístupem. Doporučuji každému." }
+    {
+      "name": "LogiTrans s.r.o.",
+      "quote": "V areálu Chrastava máme sklad už 5 let. Spolupráce s rodinou Janků je bezproblémová."
+    },
+    {
+      "name": "Studio Kreativ",
+      "quote": "Kancelář v Liberci nám poskytuje skvělé zázemí pro naši kreativní práci."
+    },
+    {
+      "name": "Ing. Petr Novák",
+      "quote": "Pohodlné bydlení s osobním přístupem. Doporučuji každému."
+    }
   ]
 }

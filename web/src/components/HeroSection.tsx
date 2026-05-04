@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center bg-bg overflow-hidden">
+    <section className="relative py-14 sm:py-18 flex items-center justify-center bg-bg overflow-hidden">
       {/* Subtle dot pattern */}
       <div className="absolute inset-0 opacity-[0.035]">
         <div
@@ -13,15 +13,11 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-        <p className="text-accent font-medium text-sm tracking-widest uppercase mb-6">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
+        <p className="text-accent font-medium text-sm tracking-widest uppercase mb-4">
           Rodinné pronájmy v Libereckém kraji
         </p>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
-          Pomáháme firmám růst díky{" "}
-          <span className="highlighter">flexibilním prostorům</span>
-        </h1>
-        <p className="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto mb-8 leading-relaxed">
           Sklady, kanceláře a bydlení s osobním přístupem. Dva areály, jedna
           rodina, desítky spokojených nájemců.
         </p>

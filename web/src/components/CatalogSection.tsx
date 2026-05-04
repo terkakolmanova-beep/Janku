@@ -31,8 +31,8 @@ export default function CatalogSection({
     return true;
   });
 
-  const available = filtered.filter((p) => p.available);
-  const rented = filtered.filter((p) => !p.available);
+  const withPrice = filtered.filter((p) => p.price > 0);
+  const onRequest = filtered.filter((p) => p.price === 0);
 
   return (
     <section id="nabidka" className="py-20 px-4 bg-white">
@@ -70,20 +70,22 @@ export default function CatalogSection({
           </div>
         ) : (
           <>
-            {available.length > 0 && (
+            {withPrice.length > 0 && (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                {available.map((p) => (
+                {withPrice.map((p) => (
                   <PropertyCard key={p.id} property={p} />
                 ))}
               </div>
             )}
-            {rented.length > 0 && (
+            {onRequest.length > 0 && (
               <>
-                <h3 className="text-lg font-semibold text-gray-400 mb-4 mt-8">
-                  Aktuálně pronajato
-                </h3>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 opacity-70">
-                  {rented.map((p) => (
+                {withPrice.length > 0 && (
+                  <h3 className="text-lg font-semibold text-gray-400 mb-4 mt-8">
+                    Cena na dotaz
+                  </h3>
+                )}
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {onRequest.map((p) => (
                     <PropertyCard key={p.id} property={p} />
                   ))}
                 </div>
