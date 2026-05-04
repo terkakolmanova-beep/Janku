@@ -3,40 +3,10 @@ import { useState, type FormEvent } from "react";
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    setLoading(true);
-    setError("");
-
-    const form = e.currentTarget;
-    const data = {
-      name:     (form.elements.namedItem("name")     as HTMLInputElement).value,
-      email:    (form.elements.namedItem("email")    as HTMLInputElement).value,
-      phone:    (form.elements.namedItem("phone")    as HTMLInputElement).value,
-      interest: (form.elements.namedItem("interest") as HTMLSelectElement).value,
-      message:  (form.elements.namedItem("message")  as HTMLTextAreaElement).value,
-    };
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (res.ok) {
-        setSubmitted(true);
-      } else {
-        setError("Odeslání se nezdařilo. Zkuste to prosím znovu nebo nás kontaktujte přímo na objednavky@jipa.cz.");
-      }
-    } catch {
-      setError("Odeslání se nezdařilo. Zkuste to prosím znovu nebo nás kontaktujte přímo na objednavky@jipa.cz.");
-    } finally {
-      setLoading(false);
-    }
+    setSubmitted(true);
   }
 
   return (
@@ -134,16 +104,11 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {error && (
-                  <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-lg">{error}</p>
-                )}
-
                 <button
                   type="submit"
-                  disabled={loading}
-                  className="w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 rounded-lg transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 rounded-lg transition-colors"
                 >
-                  {loading ? "Odesílám…" : "Odeslat zprávu"}
+                  Odeslat zprávu
                 </button>
               </form>
             )}
