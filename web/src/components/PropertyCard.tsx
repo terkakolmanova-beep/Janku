@@ -231,11 +231,9 @@ export default function PropertyCard({ property }: { property: Property }) {
           </div>
 
           {!property.available && (
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <span className="bg-white text-gray-800 px-4 py-2 rounded-lg font-semibold text-sm">
-                Pronajato
-              </span>
-            </div>
+            <span className="absolute top-3 right-3 bg-gray-800/90 text-white text-xs font-semibold px-3 py-1 rounded-full">
+              Aktuálně obsazeno
+            </span>
           )}
         </div>
 
