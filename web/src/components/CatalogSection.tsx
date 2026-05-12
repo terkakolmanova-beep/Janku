@@ -35,19 +35,8 @@ export default function CatalogSection({
   const onRequest = filtered.filter((p) => p.price === 0);
 
   return (
-    <section id="nabidka" className="py-20 px-4 bg-white">
+    <section id="nabidka" className="pt-4 pb-20 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10">
-          <p className="text-accent font-medium text-sm tracking-widest uppercase mb-3">
-            Nabídka prostorů
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Najděte svůj ideální prostor
-          </h2>
-          <p className="text-text-muted mt-4 max-w-2xl mx-auto">
-            Vybírejte z hal, kanceláří, prodejen a bytových jednotek ve dvou lokalitách.
-          </p>
-        </div>
 
         <div className="mb-8">
           <FilterBar
