@@ -230,11 +230,6 @@ export default function PropertyCard({ property }: { property: Property }) {
             </span>
           </div>
 
-          {!property.available && (
-            <span className="absolute top-3 right-3 bg-gray-800/90 text-white text-xs font-semibold px-3 py-1 rounded-full">
-              Aktuálně obsazeno
-            </span>
-          )}
         </div>
 
         {/* Content */}
@@ -300,7 +295,14 @@ export default function PropertyCard({ property }: { property: Property }) {
                   )}
                 </>
               ) : (
-                <span className="text-xl font-bold text-primary">Cena na dotaz</span>
+                <div className="flex items-center gap-3">
+                  <span className="text-xl font-bold text-primary">Cena na dotaz</span>
+                  {!property.available && (
+                    <span className="text-xs font-semibold bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">
+                      Aktuálně obsazeno
+                    </span>
+                  )}
+                </div>
               )}
             </div>
             {property.available && (
