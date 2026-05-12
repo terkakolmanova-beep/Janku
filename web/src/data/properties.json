@@ -39,7 +39,7 @@
       "name": "Hala 1",
       "area": 617,
       "price": 0,
-      "available": true,
+      "available": false,
       "description": "Nabízíme k pronájmu prostornou betonovou halu o celkové výměře 617,4 m², nacházející se v Chrastavě. Objekt je řešen jako otevřený halový prostor o rozměrech 36 × 14,7 m a je vybaven čtyřmi světlíky, které zajišťují dostatek denního osvětlení. Součástí haly je také zázemí v podobě kanceláře, šatny a toalety, což poskytuje komfortní podmínky pro administrativní i provozní činnost. Prostory jsou vhodné pro skladování, lehkou výrobu či jiné podnikatelské využití. Průkaz energetické náročnosti budovy nebyl doložen, proto uvádíme energetickou třídu G v souladu se zákonem č. 406/2000 Sb. Podmínky pronájmu jsou do uzavření smlouvy informativní a mohou být upraveny dle dohody.",
       "features": [
         "Kancelář",
@@ -62,7 +62,7 @@
       "name": "Hala 3",
       "area": 400,
       "price": 0,
-      "available": true,
+      "available": false,
       "description": "Nabízíme k pronájmu prostornou halu o celkové výměře 400 m², nacházející se v Chrastavě. Jedná se o betonovou konstrukci s výškou přesahující 13 metrů, což zajišťuje široké možnosti využití, například pro skladování, logistiku či lehkou výrobu.",
       "features": [
         "Výška 13+ m",
@@ -81,7 +81,7 @@
       "name": "Hala 4",
       "area": 315,
       "price": 0,
-      "available": true,
+      "available": false,
       "description": "Nabízíme k pronájmu prostornou halu o celkové výměře 315 m², situovanou v obci Chrastava. Objekt je tvořen betonovou konstrukcí a disponuje dvěma samostatnými místnostmi, které lze využít například jako zázemí či sklad.",
       "features": [
         "2 místnosti"
