@@ -8,7 +8,6 @@ export default function Navbar() {
     { href: "#nabidka", label: "Nabídka" },
     { href: "#arealy", label: "Areály" },
     { href: "#o-nas", label: "O nás" },
-    { href: "#reference", label: "Reference" },
     { href: "#kontakt", label: "Kontakt" },
   ];
 

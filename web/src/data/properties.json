@@ -153,7 +153,7 @@
       "name": "Prodejna přízemí",
       "area": 48,
       "price": 0,
-      "available": true,
+      "available": false,
       "description": "Nabízíme k pronájmu komerční prostor o celkové výměře 48 m², situovaný v přízemí objektu v ulici Orlí, v části obce Liberec III – Jeřáb. Prostor tvoří tři samostatné místnosti s výlohami, které zajišťují dostatek denního světla a zároveň poskytují výbornou viditelnost pro případné podnikatelské využití. Součástí prostoru je kuchyňka, která zvyšuje komfort pro každodenní provoz. Dispozice jednotky nabízí flexibilní využití například jako kancelář, obchodní prostor či provozovnu služeb. Prostory jsou umístěny v přízemí, což zajišťuje snadnou dostupnost pro klienty i zaměstnance.",
       "features": [
         "Výlohy",

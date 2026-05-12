@@ -298,7 +298,7 @@ export default function PropertyCard({ property }: { property: Property }) {
                 <div className="flex items-center gap-3">
                   <span className="text-xl font-bold text-primary">Cena na dotaz</span>
                   {!property.available && (
-                    <span className="text-xs font-semibold bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">
+                    <span className="text-xs font-semibold bg-red-100 text-red-600 px-2.5 py-1 rounded-full">
                       Aktuálně obsazeno
                     </span>
                   )}
